@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Business.Concrete;
+using Entities.Concrete;
 using System.Runtime.InteropServices;
 
 namespace Workaround
@@ -32,23 +33,32 @@ namespace Workaround
 			sehirler1[0] = "Balıkesir";
 			Console.WriteLine(sehirler2[0]);
 
+
 			Person person1 = new Person();
 			person1.FirstName = "Berkay";
+			person1.LastName = "Kaya";
+			person1.DateOfBirthYear = 2000;
+			person1.NationalIdentity = 52945610226;
+
+
 			Person person2 = new Person();
 			person2.FirstName = "Engin";
 
 			foreach (var sehir in sehirler1)
 			{
-                Console.WriteLine(sehir);
-            }
+				Console.WriteLine(sehir);
+			}
 
 			List<string> yeniSehirler = new List<string> { "Ankara", "Tokat", "Manisa" };
 			yeniSehirler.Add("İzmir");
 
 			foreach (var sehir in yeniSehirler)
 			{
-                Console.WriteLine(sehir);
-            }
+				Console.WriteLine(sehir);
+			}
+
+			PttManager pttManager = new PttManager(new PersonManager());
+			pttManager.GiveMask(person1);
 
 		}
 		static void SelamVer(string isim = "BenSeninAnonim")
