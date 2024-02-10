@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using Entities.Concrete;
+using System.Runtime.InteropServices;
 
 namespace Workaround
 {
@@ -8,11 +9,58 @@ namespace Workaround
 		{
 			//Degiskenler();
 			Vatandas vatandas1 = new Vatandas();
+			SelamVer("Bıdık");
+			SelamVer();
 
+			int sonuc = Topla(3, 5);
 
-			Console.ReadLine();
+			//Diziler - Arrays
 
+			string[] ogrenciler = new string[3];
+			ogrenciler[0] = "Engin";
+			ogrenciler[1] = "Berkay";
+			ogrenciler[2] = "Kerem";
 
+			for (int i = 0; i < ogrenciler.Length; i++)
+			{
+				Console.WriteLine(ogrenciler[i]);
+			}
+
+			string[] sehirler1 = new[] { "Ankara", "Tokat", "Manisa" };
+			string[] sehirler2 = new[] { "Yozgat", "Diyarbakır", "Edirne" };
+			sehirler2 = sehirler1;
+			sehirler1[0] = "Balıkesir";
+			Console.WriteLine(sehirler2[0]);
+
+			Person person1 = new Person();
+			person1.FirstName = "Berkay";
+			Person person2 = new Person();
+			person2.FirstName = "Engin";
+
+			foreach (var sehir in sehirler1)
+			{
+                Console.WriteLine(sehir);
+            }
+
+			List<string> yeniSehirler = new List<string> { "Ankara", "Tokat", "Manisa" };
+			yeniSehirler.Add("İzmir");
+
+			foreach (var sehir in yeniSehirler)
+			{
+                Console.WriteLine(sehir);
+            }
+
+		}
+		static void SelamVer(string isim = "BenSeninAnonim")
+		{
+			Console.WriteLine("Merhaba " + isim);
+		}
+		//default parametreler değişkenin sonuna verilir.
+		static int Topla(int sayi1, int sayi2 = 3)
+		{
+			int sonuc = sayi1 + sayi2;
+			Console.WriteLine("Toplam: " + sonuc.ToString());
+			return sonuc;
 		}
 
 		private static void Degiskenler()
@@ -34,9 +82,9 @@ namespace Workaround
 
 	public class Vatandas()
 	{
-        public string Ad { get; set; }
-        public string Soyad { get; set; }
-        public int DogumYili { get; set; }
-        public long TcNo  { get; set; }
-    }
+		public string Ad { get; set; }
+		public string Soyad { get; set; }
+		public int DogumYili { get; set; }
+		public long TcNo { get; set; }
+	}
 }
