@@ -37,8 +37,8 @@ namespace Workaround
 			Person person1 = new Person();
 			person1.FirstName = "Berkay";
 			person1.LastName = "Kaya";
-			person1.DateOfBirthYear = 2000;
-			person1.NationalIdentity = 52945610226;
+			person1.DateOfBirthYear = 1900;
+			person1.NationalIdentity = 1234;
 
 
 			Person person2 = new Person();
