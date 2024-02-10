@@ -7,6 +7,8 @@ namespace Workaround
 		static void Main(string[] args)
 		{
 			//Degiskenler();
+			Vatandas vatandas1 = new Vatandas();
+
 
 			Console.ReadLine();
 
@@ -32,9 +34,9 @@ namespace Workaround
 
 	public class Vatandas()
 	{
-		string ad = "Berkay";
-		string soyad = "Kaya";
-		int dogumYili = 2000;
-		long TcNo = 1234567890;
-	}
+        public string Ad { get; set; }
+        public string Soyad { get; set; }
+        public int DogumYili { get; set; }
+        public long TcNo  { get; set; }
+    }
 }
